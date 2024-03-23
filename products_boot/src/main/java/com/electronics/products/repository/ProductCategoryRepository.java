@@ -14,4 +14,7 @@ public interface ProductCategoryRepository {
 	
 	ProductCategory save(ProductCategory ingrediant);
 
+	Integer getNewProductCategoryId();
+	
+	ProductCategory getProductCategoryDetailsByName(String productCategoryName);
 }

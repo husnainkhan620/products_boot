@@ -6,12 +6,17 @@ import com.electronics.products.data.ProductSubCategory;
 
 public interface ProductSubCategoryRepository {
 	
-	List<ProductSubCategory> findAll();
+	List<ProductSubCategory> findAllProductSubCategories();
 	
-	List<ProductSubCategory> findByProductCategory(String productCategoryId);
+	List<ProductSubCategory> findByProductCategoryId(String productCategoryId);
 	
 	ProductSubCategory findOne(String id);
 	
 	ProductSubCategory save(ProductSubCategory ingrediant);
-
+	
+	int getNewProductSubcategoryId(String productCategoryName);
+	
+	ProductSubCategory getProductSubCategoryDetailsByName(String productSubCategoryName);
+	
+	List<ProductSubCategory>  findByProductCategoryName(String productCategoryName);
 }

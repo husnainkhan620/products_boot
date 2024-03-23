@@ -44,9 +44,37 @@ public class JdbcProductCategoryRepository implements ProductCategoryRepository 
 	}
 
 	@Override
-	public ProductCategory save(ProductCategory ingrediant) {
+	public ProductCategory save(ProductCategory productCategory) {
 		// TODO Auto-generated method stub
-		return null;
+		 jdbcTemplate.update("insert into product_Category values(?,?,?)",productCategory.getProductCategoryId(),productCategory.getProductCategoryName(),productCategory.getProductCategoryQuantity());
+		 
+		 System.out.print("New Product Inserted successfully");
+		 return productCategory;
+	}
+
+	@Override
+	public Integer getNewProductCategoryId() {
+		
+		Integer result = jdbcTemplate.queryForObject("select max(productCategoryId) from product_Category", Integer.class);
+		return result;
+	}
+
+	@Override
+	public ProductCategory getProductCategoryDetailsByName(String productCategoryName) {
+	
+		return jdbcTemplate.queryForObject("select * from PRODUCT_CATEGORY where productCategoryName = ?", new RowMapper<ProductCategory>() {
+
+			@Override
+			public ProductCategory mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				ProductCategory productCategory = new ProductCategory();
+				productCategory.setProductCategoryId(rs.getInt("productCategoryId"));
+				productCategory.setProductCategoryName(rs.getString("productCategoryName"));
+				productCategory.setProductCategoryQuantity(rs.getInt("productCategoryQuantity"));
+				
+				return productCategory;
+			}
+		},productCategoryName);
 	}
 	
 	

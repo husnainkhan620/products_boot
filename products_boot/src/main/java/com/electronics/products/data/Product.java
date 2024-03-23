@@ -1,7 +1,6 @@
 package com.electronics.products.data;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 
 
 public class Product {
@@ -13,17 +12,18 @@ public class Product {
 	@Column
 	private Integer productSubCategoryId;
 	@Column
-	private String productSubCategotyName;
+	private String productSubCategoryName;
 	@Column
 	private Integer productCategoryId;
 	@Column
-	private Integer productCategotyName;
+	private String productCategoryName;
 	@Column
 	private Boolean productActive;
 	@Column
 	private String skucode;
 	@Column
 	private Integer productQuantity;
+	
 	public Integer getProductId() {
 		return productId;
 	}
@@ -42,11 +42,11 @@ public class Product {
 	public void setProductSubCategoryId(Integer productSubCategoryId) {
 		this.productSubCategoryId = productSubCategoryId;
 	}
-	public String getProductSubCategotyName() {
-		return productSubCategotyName;
+	public String getProductSubCategoryName() {
+		return productSubCategoryName;
 	}
-	public void setProductSubCategotyName(String productSubCategotyName) {
-		this.productSubCategotyName = productSubCategotyName;
+	public void setProductSubCategoryName(String productSubCategoryName) {
+		this.productSubCategoryName = productSubCategoryName;
 	}
 	public Integer getProductCategoryId() {
 		return productCategoryId;
@@ -54,11 +54,11 @@ public class Product {
 	public void setProductCategoryId(Integer productCategoryId) {
 		this.productCategoryId = productCategoryId;
 	}
-	public Integer getProductCategotyName() {
-		return productCategotyName;
+	public String getProductCategoryName() {
+		return productCategoryName;
 	}
-	public void setProductCategotyName(Integer productCategotyName) {
-		this.productCategotyName = productCategotyName;
+	public void setProductCategoryName(String productCategoryName) {
+		this.productCategoryName = productCategoryName;
 	}
 	public Boolean getProductActive() {
 		return productActive;

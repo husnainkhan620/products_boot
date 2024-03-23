@@ -6,7 +6,7 @@ public class ProductHolder {
 	
 	private String productName;
 	private Integer productQuantity;
-	private List<SubProductHolder> subProductHolder;
+	private List<SubProductHolder> subProduct;
 	
 	public String getProductName() {
 		return productName;
@@ -20,13 +20,13 @@ public class ProductHolder {
 	public void setProductQuantity(Integer productQuantity) {
 		this.productQuantity = productQuantity;
 	}
-	public List<SubProductHolder> getSubProductHolder() {
-		return subProductHolder;
+	public List<SubProductHolder> getSubProduct() {
+		return subProduct;
 	}
-	public void setSubProductHolder(List<SubProductHolder> subProductHolder) {
-		this.subProductHolder = subProductHolder;
+	public void setSubProduct(List<SubProductHolder> subProduct) {
+		this.subProduct = subProduct;
 	}
-	
+
 	
 
 }
